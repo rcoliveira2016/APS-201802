@@ -1,0 +1,5 @@
+Migration
+ - Enable-Migrations -ProjectName APS.Infra.Data.Context -StartUpProjectName APS.Presentation.Web -Verbose -Force
+
+Download
+ - https://www.microsoft.com/pt-br/download/details.aspx?id=42299 (opação: Express 64BIT\SQLEXPR_x64_PTB.exe)
