@@ -29,7 +29,11 @@ namespace APS.Presentation.Web
             if (cookie != null && cookie.HasKeys)
             {
                 usuario = BuscarUsuarioLogin(cookie.Values[chaveValorLoginUsuario]);
-                if(usuario != null) return usuario;
+                if (usuario != null)
+                {
+                    HttpContext.Current.Session[chaveUsuarioLogadoSessao] = usuario;
+                    return usuario;
+                };
             }
 
             return new UsuarioViewModel { EstaLogado = false };
