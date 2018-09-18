@@ -28,9 +28,8 @@ namespace APS.Presentation.Web.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return RedirectToAction(nameof(Index));
+            return View("~/Views/Shared/_Login.cshtml");
         }
-
         
 
         [HttpPost]

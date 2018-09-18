@@ -48,10 +48,6 @@ namespace APS.Presentation.Web
 
         public static void LogarUsuario(UsuarioViewModel usuarioViewModel)
         {
-            var cookie = HttpContext.Current.Response.Cookies.Get(chaveUsuarioLogadoSessao);
-            if (cookie !=null && cookie.HasKeys)
-
-
             HttpContext.Current.Session.Add(chaveUsuarioLogadoSessao, usuarioViewModel);
             SetarCookie(usuarioViewModel);
         }
