@@ -47,7 +47,7 @@ namespace APS.Presentation.Web
 
             if (usuario != null) return;
 
-            usuarioService.Cadastrar(new UsuarioViewModel { Email = "", Id = 0, Login = nomeUsuario, Nome = "Luis Cesar", Senha = "123", TipoUsuario = eTipoUsuario.Administrador });
+            usuarioService.Cadastrar(new UsuarioViewModel { Email = "tes@com.com", Id = 0, Login = nomeUsuario, Nome = "Luis Cesar", Senha = "123", TipoUsuario = eTipoUsuario.Administrador });
         }
 
         public static void LogarUsuario(UsuarioViewModel usuarioViewModel)
@@ -64,8 +64,11 @@ namespace APS.Presentation.Web
 
         public static void SetarCookie(UsuarioViewModel usuarioViewModel)
         {
-            var cookie = new HttpCookie(chaveUsuarioLogadoSessao);
-            cookie.Expires = DateTime.Now.AddDays(3);
+            var cookie = new HttpCookie(chaveUsuarioLogadoSessao)
+            {
+                Expires = DateTime.Now.AddDays(3)
+            };
+
             cookie.Values[chaveValorLoginUsuario] = usuarioViewModel.Login;
 
             HttpContext.Current.Response.Cookies.Add(cookie);
