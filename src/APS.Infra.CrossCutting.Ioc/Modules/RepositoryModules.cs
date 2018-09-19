@@ -17,6 +17,7 @@ namespace APS.Infra.CrossCutting.Ioc.Modules
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<IDbContext, APSContext>(Lifestyle.Scoped);
             container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Scoped);
+            container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Scoped);
         }
     }
 }

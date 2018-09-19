@@ -48,17 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppService\Common\AppService.cs" />
+    <Compile Include="AppService\ClienteAppService.cs" />
     <Compile Include="AppService\UsuarioAppService.cs" />
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
-    <Compile Include="AutoMapper\DomainToViewModel\UsuarioMap.cs" />
+    <Compile Include="AutoMapper\Mapping\ClienteMap.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
-    <Compile Include="AutoMapper\ViewModelToDomain\Common.cs" />
-    <Compile Include="AutoMapper\ViewModelToDomain\UsuarioMap.cs" />
+    <Compile Include="AutoMapper\Mapping\Common.cs" />
+    <Compile Include="AutoMapper\Mapping\UsuarioMap.cs" />
     <Compile Include="Interfaces\Common\IAppService.cs" />
-    <Compile Include="Interfaces\ISessionContext.cs" />
+    <Compile Include="Interfaces\IClienteAppService.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Clientes\CadastroViewModel.cs" />
     <Compile Include="ViewModel\Common\AnexoViewModel.cs" />
     <Compile Include="ViewModel\Usuario\CadastroViewModel.cs" />
     <Compile Include="ViewModel\Usuario\LoginUsuarioViewModel.cs" />

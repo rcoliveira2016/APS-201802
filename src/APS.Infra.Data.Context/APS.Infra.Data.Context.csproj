@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Config\APSContext.cs" />
     <Compile Include="Extensions\EntityFramework\Mappings\PropertyConfigurationExtension.cs" />
+    <Compile Include="Mappings\EntityFramework\ClienteMap.cs" />
     <Compile Include="Mappings\EntityFramework\UsuarioMap.cs" />
     <Compile Include="Migrations\201809190126394_INIT.cs" />
     <Compile Include="Migrations\201809190126394_INIT.Designer.cs">

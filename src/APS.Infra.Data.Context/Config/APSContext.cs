@@ -32,6 +32,7 @@ namespace APS.Infra.Data.Context.Config
             ConfigurarTipoPadraoColunasPropriedadesString(modelBuilder);
 
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new ClienteMap());
 
         }
 

@@ -23,7 +23,7 @@ namespace APS.Domain.Service
 
 
             var usuario = repositorio.Find(x => x.Login == entidade.Login).FirstOrDefault();
-            ValidarRegras(entidade).AddValidacao(() => usuario == null, "Login Repitido");
+            ValidarRegras(entidade).AddValidacao(() => usuario == null, "Login repetido");
             
 
             ValidarRegras().IsValid();
