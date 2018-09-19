@@ -22,8 +22,8 @@ namespace APS.Domain.Service
             this.ValidacaoBasica(entidade);
 
 
-            var usuario = repositorio.Find(x => x.Login == entidade.Login);
-            ValidarRegras(entidade).AddValidacao(() => usuario == null, "Login Repitido");
+            var usuario = repositorio.Find(x => x.Login == entidade.Login).FirstOrDefault();
+            ValidarRegras(entidade).AddValidacao(() => usuario == null, "Login repetido");
             
 
             ValidarRegras().IsValid();
@@ -43,7 +43,6 @@ namespace APS.Domain.Service
                 .NotEmpty(x => x.Login, "Login vazio")
                 .NotEmpty(x => x.Nome, "Nome vazio")
                 .NotEmpty(x => x.Senha, "Senha vazio")
-                .IsValidEmail(x => x.Email, "Email inválido")
                 .IsEnum(x => x.TipoUsuario, "Enum inválido");                      
         }
 

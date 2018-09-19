@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,7 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFramework\Common\Repository.cs" />
-    <Compile Include="EntityFramework\Usuario\UsuarioRepository.cs" />
+    <Compile Include="EntityFramework\ClienteRepository.cs" />
+    <Compile Include="EntityFramework\UsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

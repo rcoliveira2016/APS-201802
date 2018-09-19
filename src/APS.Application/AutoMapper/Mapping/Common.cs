@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APS.Application.AutoMapper.ViewModelToDomain
+namespace APS.Application.AutoMapper.Mapping
 {
     public sealed class Common
     {

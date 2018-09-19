@@ -14,6 +14,7 @@ namespace APS.Infra.CrossCutting.Ioc.Modules
         public static void Register(Container container)
         {
             container.Register<IUsuarioService, UsuarioService>(Lifestyle.Scoped);
+            container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
         }
     }
 }

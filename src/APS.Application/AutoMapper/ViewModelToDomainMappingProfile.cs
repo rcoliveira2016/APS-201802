@@ -1,4 +1,4 @@
-﻿using APS.Application.AutoMapper.ViewModelToDomain;
+﻿using APS.Application.AutoMapper.Mapping;
 using APS.Infra.CrossCutting.Bus;
 using AutoMapper;
 
@@ -17,6 +17,7 @@ namespace APS.Application.AutoMapper
         public ViewModelToDomainMappingProfile()
         {
             UsuarioMap.Map(this);
+            ClienteMap.Map(this);
             Common.Map(this);
         }
     }
