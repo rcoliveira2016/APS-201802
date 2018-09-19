@@ -1,5 +1,6 @@
 ﻿using APS.Application.Interfaces;
 using APS.Application.ViewModel.Usuario;
+using APS.Domain.Core.Models.Usurios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace APS.Presentation.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            AplicacaoWeb.LogarUsuario(new CadastroViewModel { Email = "tes@com.com", Id = 0, Login = "llo", Nome = "Luis Cesar", Senha = "123", TipoUsuario = eTipoUsuario.Administrador });
             return View();
         }
 
@@ -40,12 +42,12 @@ namespace APS.Presentation.Web.Controllers
             if (usuario != null && usuario.Senha.Equals(model.Senha) && usuario.Login.Equals(model.Login))
             {
                 AplicacaoWeb.LogarUsuario(usuario);
-                return View("Index");
+                return View(nameof(Index));
             }
             else
             {
                 ViewBag.Erros = "Usuario ou senha Inválido!";
-                return View("Index");
+                return View(nameof(Index));
             }
         }
 

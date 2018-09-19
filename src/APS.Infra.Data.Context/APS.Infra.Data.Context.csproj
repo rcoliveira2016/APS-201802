@@ -73,10 +73,6 @@
     <Compile Include="Extensions\EntityFramework\Mappings\PropertyConfigurationExtension.cs" />
     <Compile Include="Mappings\EntityFramework\ClienteMap.cs" />
     <Compile Include="Mappings\EntityFramework\UsuarioMap.cs" />
-    <Compile Include="Migrations\201809190126394_INIT.cs" />
-    <Compile Include="Migrations\201809190126394_INIT.Designer.cs">
-      <DependentUpon>201809190126394_INIT.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,11 +104,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809190126394_INIT.resx">
-      <DependentUpon>201809190126394_INIT.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

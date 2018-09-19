@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar Cliete";
+}
+<section class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</section>
+<section class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Cadastro
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Cadastrar", "Clientes", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <input class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Endereço</label>
+                                <input class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Descrição</label>
+                                <input class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Situação</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked>Ativo
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="button" class="btn btn-outline btn-success">Salvar</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

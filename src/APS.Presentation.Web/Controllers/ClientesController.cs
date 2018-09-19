@@ -19,5 +19,10 @@ namespace APS.Presentation.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
     }
 }

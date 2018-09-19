@@ -434,10 +434,23 @@ a{
 	color:#5e758a;
 }
 
-.navbar-brand{
-  padding-top: 6px;
-  padding-left: 13px;
-  line-height: unset;
+.panel-yellow .panel-heading > a {
+    color: #f1f1f1;
+}
+
+.panel-body {
+    padding: 9px;
+}
+
+.panel-yellow .panel-body div.table-responsive table.table.table-striped.table-bordered.table-hover {
+    margin:0;
+    padding:0;
+}
+
+.navbar-brand {
+    padding-top: 6px;
+    padding-left: 13px;
+    line-height: unset;
 }
 
 .table-hover>tbody>tr:hover {

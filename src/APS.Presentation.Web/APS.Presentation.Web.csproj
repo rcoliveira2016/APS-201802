@@ -286,6 +286,7 @@
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\Layout\_Navbar.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Clientes\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APS.Application\APS.Application.csproj">

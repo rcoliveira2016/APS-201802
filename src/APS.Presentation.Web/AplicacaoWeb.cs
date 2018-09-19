@@ -22,7 +22,11 @@ namespace APS.Presentation.Web
         {
             var usuario = HttpContext.Current.Session[chaveUsuarioLogadoSessao] as UsuarioViewModel;
 
-            if (usuario != null) return usuario;
+            if (usuario != null)
+            {
+                usuario.EstaLogado = true;
+                return usuario;
+            }
 
             var cookie = HttpContext.Current.Response.Cookies.Get(chaveUsuarioLogadoSessao);
 

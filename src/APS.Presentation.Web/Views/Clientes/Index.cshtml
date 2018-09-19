@@ -4,14 +4,14 @@
 }
 <section class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Início</h1>
+        <h1 class="page-header">@ViewBag.Title</h1>
     </div>
 </section>
 <section class="row">
     <div class="col-lg-12">
-        <div class="panel panel-default">
+        <div class="panel panel-yellow">
             <div class="panel-heading">
-                Listagem de Cliente
+                <a href="@Url.Action("Cadastrar")"><i class="fa fa-plus fa-fw" aria-hidden="true"></i> Cliente</a>
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
