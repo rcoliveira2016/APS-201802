@@ -1,6 +1,7 @@
 ﻿using APS.Application.Interfaces;
 using APS.Application.ViewModel.Usuario;
 using APS.Domain.Core.Models.Usurios;
+using APS.Presentation.Web.Helpers.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers
 {
+    [AutenticacaoWebMVC]
     public class HomeController : Controller
     {
 
@@ -20,14 +22,14 @@ namespace APS.Presentation.Web.Controllers
             _serviceUsuarios = serviceUsuarios;
         }
 
-        [HttpGet]
+        
         public ActionResult Index()
         {
-            AplicacaoWeb.LogarUsuario(new CadastroViewModel { Email = "tes@com.com", Id = 0, Login = "llo", Nome = "Luis Cesar", Senha = "123", TipoUsuario = eTipoUsuario.Administrador });
+            //AplicacaoWeb.LogarUsuario(new CadastroViewModel { Email = "tes@com.com", Id = 0, Login = "llo", Nome = "Luis Cesar", Senha = "123", TipoUsuario = eTipoUsuario.Administrador });
             return View();
         }
 
-        [HttpGet]
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View("~/Views/Shared/_Login.cshtml");
@@ -35,19 +37,19 @@ namespace APS.Presentation.Web.Controllers
         
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Login(LoginUsuarioViewModel model)
         {
             var usuario = _serviceUsuarios.BuscarPorLogin(model.Login);
             if (usuario != null && usuario.Senha.Equals(model.Senha) && usuario.Login.Equals(model.Login))
             {
                 AplicacaoWeb.LogarUsuario(usuario);
-                return View(nameof(Index));
+                return RedirectToAction("Index");
             }
             else
             {
                 ViewBag.Erros = "Usuario ou senha Inválido!";
-                return View(nameof(Index));
+                return View("~/Views/Shared/_Login.cshtml");
             }
         }
 
@@ -55,7 +57,7 @@ namespace APS.Presentation.Web.Controllers
         public ActionResult LogOff() {
 
             AplicacaoWeb.LogOffUsuario();
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            return View("~/Views/Shared/_Login.cshtml");
         }
         
     }

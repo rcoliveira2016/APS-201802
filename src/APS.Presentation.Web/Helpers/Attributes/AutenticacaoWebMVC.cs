@@ -12,7 +12,9 @@ namespace APS.Presentation.Web.Helpers.Attributes
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
 
-            if (!AplicacaoWeb.UsuarioLogado.EstaLogado)
+            if (
+                !filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), false) &&
+                !AplicacaoWeb.UsuarioLogado.EstaLogado)
             {
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
                 {

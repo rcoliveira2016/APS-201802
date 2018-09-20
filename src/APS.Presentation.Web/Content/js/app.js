@@ -22,12 +22,12 @@ $(function() {
         }
     });
 
-    var url = window.location.replace("#");
+    var url = window.location;
     // var element = $('ul.nav a').filter(function() {
     //     return this.href == url;
     // }).addClass('active').parent().parent().addClass('in').parent();
     var element = $('ul.nav a').filter(function() {
-        return this.href == url;
+        return this.href === url;
     }).addClass('active').parent();
 
     while (true) {
@@ -37,4 +37,6 @@ $(function() {
             break;
         }
     }
+
+
 });

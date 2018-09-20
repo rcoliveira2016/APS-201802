@@ -38,17 +38,24 @@
                         <h3 class="panel-title">Entre Aqui</h3>
                     </section>
                     <section class="panel-body">
-                        <form role="form">
+                        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                        {
                             <fieldset>
+                                @if(!string.IsNullOrEmpty(ViewBag.Erros))
+                                {
+                                <div style="margin-bottom:20px" class="alert alert-danger">
+                                    <b>Erro:</b> @ViewBag.Erros
+                                </div>
+                                }
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="Login" name="Login" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Senha" name="senha" type="senha" value="">
+                                    <input class="form-control" placeholder="Senha" name="Senha" type="password">
                                 </div>
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Entrar</a>
+                                <button type="submit" href="index.html" class="btn btn-lg btn-success btn-block">Entrar</button>
                             </fieldset>
-                        </form>
+                        }
                     </section>
                 </div>
             </div>

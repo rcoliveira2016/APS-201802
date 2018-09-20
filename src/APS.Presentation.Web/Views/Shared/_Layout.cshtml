@@ -15,6 +15,7 @@
     <link href="@Url.Content("~/Content/plugins/metisMenu/metisMenu.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Content/css/estilo.css")" rel="stylesheet">
     <link href="@Url.Content("~/Content/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+    <script src="@Url.Content("~/Content/plugins/bootstrap-dialog/css/bootstrap-dialog.css")"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     @RenderSection("Css", false)
     <!--[if lt IE 9]>
@@ -25,17 +26,19 @@
 </head>
 <body>
     <div id="wrapper">
-        
+
         @Html.Partial("~/Views/Shared/Layout/_Navbar.cshtml")
 
-        <main id="page-wrapper">            
+        <main id="page-wrapper">
             @RenderBody()
         </main>
     </div>
     <script src="@Url.Content("~/Content/plugins/jquery/jquery.min.js")"></script>
     <script src="@Url.Content("~/Content/plugins/bootstrap/js/bootstrap.min.js")"></script>
     <script src="@Url.Content("~/Content/plugins/metisMenu/metisMenu.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/bootstrap-dialog/js/bootstrap-dialog.js")"></script>
     <script src="@Url.Content("~/Content/js/app.js")"></script>
+    <script src="@Url.Content("~/Content/js/app-methos.js")"></script>
     @RenderSection("Scripts", false)
 </body>
 

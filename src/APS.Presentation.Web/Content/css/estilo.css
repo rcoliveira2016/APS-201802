@@ -456,6 +456,12 @@ a{
 .table-hover>tbody>tr:hover {
   background-color: #eaeaea;
 }
+
+table.table.listagem th:nth-child(1),
+table.table.listagem th:nth-child(2) {
+    width: 50px;
+}
+
 .logo, .nav-logo{
   width: 31px;
 }
@@ -468,3 +474,4 @@ a{
   /*vertical-align: middle;*/
   vertical-align: -8px;
 }
+

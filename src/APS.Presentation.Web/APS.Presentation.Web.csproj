@@ -178,9 +178,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\estilo.css" />
-    <Content Include="Content\css\estilo.min.css" />
+    <Content Include="Content\js\app-methos.js" />
     <Content Include="Content\js\app.js" />
-    <Content Include="Content\js\app.min.js" />
     <Content Include="Content\midia\logo.png" />
     <Content Include="Content\plugins\bootstrap-social\bootstrap-social.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
@@ -198,6 +197,8 @@
     <Content Include="Content\plugins\metisMenu\metisMenu.js" />
     <Content Include="Content\plugins\metisMenu\metisMenu.min.css" />
     <Content Include="Content\plugins\metisMenu\metisMenu.min.js" />
+    <Content Include="Content\plugins\bootstrap-dialog\css\bootstrap-dialog.css" />
+    <Content Include="Content\plugins\bootstrap-dialog\js\bootstrap-dialog.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
