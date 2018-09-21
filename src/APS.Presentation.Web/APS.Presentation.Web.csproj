@@ -192,6 +192,7 @@
     <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\plugins\font-awesome\HELP-US-OUT.txt" />
     <Content Include="Content\plugins\jquery\jquery.js" />
+    <Content Include="Content\plugins\jquery\jquery.mask.js" />
     <Content Include="Content\plugins\jquery\jquery.min.js" />
     <Content Include="Content\plugins\metisMenu\metisMenu.css" />
     <Content Include="Content\plugins\metisMenu\metisMenu.js" />

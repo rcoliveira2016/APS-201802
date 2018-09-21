@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\Repository\Usuario\IUsuarioRepository.cs" />
     <Compile Include="Interfaces\Service\IClienteService.cs" />
     <Compile Include="Interfaces\Service\IUsuarioService.cs" />
+    <Compile Include="Models\Agendamentos\Agendamento.cs" />
     <Compile Include="Models\Clientes\Cliente.cs" />
     <Compile Include="Models\Common\Anexos\ArquivoFisico.cs" />
     <Compile Include="Models\Usurios\ArquivoUsuario.cs" />
