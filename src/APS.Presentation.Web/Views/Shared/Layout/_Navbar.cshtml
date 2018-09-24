@@ -22,7 +22,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li>
-                        <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                        <a href="@Url.Action("LogOff", "Home")"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                     </li>
                 </ul>
             </li>
@@ -35,7 +35,7 @@
                     <a href="@Url.Action("Index", "Clientes")"><i class="fa fa-user-circle fa-fw"></i> Clientes</a>
                 </li>
                 <li>
-                    <a href="forms.html"><i class="fa fa-calendar-plus-o fa-fw"></i> Agendamento</a>
+                    <a href="@Url.Action("Index", "Agendamentos")"><i class="fa fa-calendar-plus-o fa-fw"></i> Agendamento</a>
                 </li>
                 <li>
                     <a href="tables.html"><i class="fa fa-table fa-fw"></i> Calendario</a>

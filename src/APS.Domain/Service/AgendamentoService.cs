@@ -40,7 +40,9 @@ namespace APS.Domain.Service
             ValidarRegras(entidade)
                 .NotEmpty(x => x.Descricao, "Descrição vazia")
                 .NotEmpty(x => x.Endereco, "Endereço vazio")
-                .Greater(x => x.Data, DateTime.Now, "Data não pode ser inferior a data atual");
+                .Greater(x => x.Data, DateTime.Now, "Data não pode ser inferior a data atual")
+                .Greater(x => x.Preco, -1, "Preço deve ser maior q zero")
+                .Greater(x => x.HoraFinal, entidade.HoraInicial, "Honar inical não pode ser menor que a final");
         }
 
         public override void Dispose()

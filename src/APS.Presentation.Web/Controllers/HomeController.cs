@@ -11,7 +11,6 @@ using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers
 {
-    [AutenticacaoWebMVC]
     public class HomeController : Controller
     {
 
@@ -53,11 +52,11 @@ namespace APS.Presentation.Web.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult LogOff() {
 
             AplicacaoWeb.LogOffUsuario();
-            return View("~/Views/Shared/_Login.cshtml");
+            return RedirectToAction("Login");
         }
         
     }

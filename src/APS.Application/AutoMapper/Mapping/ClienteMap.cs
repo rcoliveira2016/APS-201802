@@ -1,7 +1,7 @@
 ﻿using APS.Application.ViewModel.Common;
-using APS.Application.ViewModel.Usuario;
+using APS.Application.ViewModel.Clientes;
 using APS.Domain.Models.Common.Anexos;
-using APS.Domain.Models.Usurios;
+using APS.Domain.Models.Clientes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +14,13 @@ namespace APS.Application.AutoMapper.Mapping
     {
         public static void Map(ViewModelToDomainMappingProfile profile)
         {
-            profile.CreateMap<CadastroViewModel, Usuario>();
+            profile.CreateMap<CadastroViewModel, Cliente>()
+                .ForMember(x=> x.Agendamentos, m=> m.Ignore());
         }
 
         public static void Map(DomainToViewModelMappingProfile profile)
         {
-            profile.CreateMap<Usuario, CadastroViewModel>();
+            profile.CreateMap<Cliente, CadastroViewModel>();
         }
     }
 }

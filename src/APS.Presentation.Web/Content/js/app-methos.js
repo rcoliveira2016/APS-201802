@@ -37,7 +37,7 @@
                 error: function(data){
                     BootstrapDialog.alert({
                         title: 'Erro',
-                        message: 'Erro ao excluir',
+                        message: 'Erro ao excluir:' + data,
                         label: BootstrapDialog.TYPE_DANGER
                     });
                 }

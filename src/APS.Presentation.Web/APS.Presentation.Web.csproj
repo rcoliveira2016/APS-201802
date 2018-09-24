@@ -165,6 +165,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AgendamentosController.cs" />
+    <Compile Include="Controllers\Common\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -181,6 +183,15 @@
     <Content Include="Content\js\app-methos.js" />
     <Content Include="Content\js\app.js" />
     <Content Include="Content\midia\logo.png" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
     <Content Include="Content\plugins\bootstrap-social\bootstrap-social.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
@@ -200,6 +211,8 @@
     <Content Include="Content\plugins\metisMenu\metisMenu.min.js" />
     <Content Include="Content\plugins\bootstrap-dialog\css\bootstrap-dialog.css" />
     <Content Include="Content\plugins\bootstrap-dialog\js\bootstrap-dialog.js" />
+    <Content Include="Content\plugins\timePicker-timeformat\jquery.timepicker.css" />
+    <Content Include="Content\plugins\timePicker-timeformat\jquery.timepicker.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -229,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -284,11 +298,17 @@
     <Content Include="Content\plugins\font-awesome\scss\_spinning.scss" />
     <Content Include="Content\plugins\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\plugins\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.css.map" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\Layout\_Navbar.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
     <Content Include="Views\Clientes\Cadastrar.cshtml" />
+    <Content Include="Views\Agendamentos\Cadastrar.cshtml" />
+    <Content Include="Views\Agendamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APS.Application\APS.Application.csproj">

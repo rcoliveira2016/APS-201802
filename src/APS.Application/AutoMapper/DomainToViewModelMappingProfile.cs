@@ -16,6 +16,7 @@ namespace APS.Application.AutoMapper
 
         public DomainToViewModelMappingProfile()
         {
+            AgendamentoMap.Map(this);
             UsuarioMap.Map(this);
             ClienteMap.Map(this);
         }

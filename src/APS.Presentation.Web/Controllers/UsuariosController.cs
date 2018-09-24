@@ -12,7 +12,6 @@ using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers
 {
-    [AutenticacaoWebMVC]
     public class UsuariosController : Controller
     {
         private readonly IUsuarioAppService usuarioAppService;

@@ -72,10 +72,15 @@
     <Compile Include="Config\APSContext.cs" />
     <Compile Include="Extensions\EntityFramework\Mappings\PropertyConfigurationExtension.cs" />
     <Compile Include="Mappings\EntityFramework\ClienteMap.cs" />
+    <Compile Include="Mappings\EntityFramework\AgendamentoMap.cs" />
     <Compile Include="Mappings\EntityFramework\UsuarioMap.cs" />
     <Compile Include="Migrations\201809202024406_Cliente.cs" />
     <Compile Include="Migrations\201809202024406_Cliente.Designer.cs">
       <DependentUpon>201809202024406_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809220053521_Agendamentos.cs" />
+    <Compile Include="Migrations\201809220053521_Agendamentos.Designer.cs">
+      <DependentUpon>201809220053521_Agendamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +117,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809202024406_Cliente.resx">
       <DependentUpon>201809202024406_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809220053521_Agendamentos.resx">
+      <DependentUpon>201809220053521_Agendamentos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

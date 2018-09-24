@@ -33,6 +33,7 @@ namespace APS.Infra.Data.Context.Config
 
             modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Configurations.Add(new ClienteMap());
+            modelBuilder.Configurations.Add(new AgendamentoMap());
 
         }
 

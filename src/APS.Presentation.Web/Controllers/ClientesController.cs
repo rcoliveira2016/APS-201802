@@ -5,9 +5,9 @@ using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers
 {
-    [AutenticacaoWebMVC]
     public class ClientesController : Controller
-    {
+    {        
+
         private readonly IClienteAppService clienteAppService;
 
         public ClientesController(IClienteAppService clienteAppService)
@@ -50,6 +50,13 @@ namespace APS.Presentation.Web.Controllers
         {
             clienteAppService.Remover(id);
             return new HttpStatusCodeResult(200);
+        }
+
+        [HttpGet]
+        public JsonResult BurcarCliente(long id)
+        {
+            var cliente = clienteAppService.BuscarPorId(id);
+            return Json(cliente, JsonRequestBehavior.AllowGet);
         }
     }
 }

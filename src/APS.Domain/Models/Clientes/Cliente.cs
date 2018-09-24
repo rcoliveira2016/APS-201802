@@ -1,4 +1,5 @@
 ﻿using APS.Domain.Core.Models.Common;
+using APS.Domain.Models.Agendamentos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,5 +23,6 @@ namespace APS.Domain.Models.Clientes
         public string Descricao { get; set; }
         public string Telefone { get; set; }
         public bool Ativo { get; set; }
+        public ICollection<Agendamento> Agendamentos { get; set; }
     }
 }

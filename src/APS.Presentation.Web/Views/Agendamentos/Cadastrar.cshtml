@@ -1,0 +1,136 @@
+﻿@model APS.Application.ViewModel.Agendamentos.CadastroViewModel
+@{
+    ViewBag.Title = "Cadastro de Agendamentos";
+    ViewBag.Action = Model.Id > 0 ? "Atualizar" : "Cadastrar";
+    ViewBag.Index = "Index";
+}
+
+<section class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</section>
+<section class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Cadastro
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm(Model.Id > 0 ? "Atualizar" : "Cadastrar", "Agendamentos", FormMethod.Post,new { id="form"})){
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            @Html.DropDownListFor(x => x.IdCliente, new SelectList(ViewBag.Clientes, "Id", "Nome"), "Selecione um cliente", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>Data</label>
+                            <div class="input-group date">
+                                @Html.TextBoxFor(x => x.Data, new { @class = "form-control datepicker" })
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>Hora Inicial</label>                            
+                            <div class="input-group date">
+                                @Html.TextBoxFor(x => x.HoraInicial, new { @class = "form-control datepicker" })
+                                <div class="input-group-addon">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label>Hora Final</label>                            
+                            <div class="input-group date">
+                                @Html.TextBoxFor(x => x.HoraFinal, new { @class = "form-control datepicker" })
+                                <div class="input-group-addon">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Endereço</label>
+                            @Html.TextAreaFor(x => x.Endereco, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Descrição</label>
+                            @Html.TextAreaFor(x => x.Descricao, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Preço</label>
+                            <div class="input-group">
+                                @Html.TextBoxFor(x => x.Preco, new { @class = "form-control" })
+                                <div class="input-group-addon">
+                                    $
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-outline btn-success">Salvar</button>
+                        @if (Model.Id > 0)
+                        {
+                            <button data-id="@Model.Id" type="button" class="btn btn-outline btn-danger btn-excluir">Excluir</button>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('input').attr('autocomplete', 'off');
+
+            $('#Preco').mask('#.##0,00', { reverse: true });
+
+            $('#Data').datepicker({ language:'pt-br'});
+
+            $("#HoraInicial, #HoraFinal").timepicker({ timeFormat: 'HH:mm'});
+
+            $(".btn-excluir").on('click', function (e) {
+                e.preventDefault();
+                App.excluir({
+                    id: $(this).data('id'),
+                    url: "@Url.Action("Excluir")",
+                    botao: $(this)
+                });
+            });
+
+            $('#IdCliente').change(function (e) {
+                $.ajax({
+                    type: 'GET',
+                    data: { id: $(this).val() },
+                    url: "@Url.Action("BurcarCliente", "Clientes")",
+                    success: function (data) {
+                        $('#Endereco').val(data.Endereco);
+                    }
+                });
+            });
+
+        });
+    </script>
+}

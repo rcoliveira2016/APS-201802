@@ -15,6 +15,7 @@ namespace APS.Infra.CrossCutting.Ioc.Modules
         {
             container.Register<IUsuarioService, UsuarioService>(Lifestyle.Scoped);
             container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
+            container.Register<IAgendamentoService, AgendamentoService>(Lifestyle.Scoped);
         }
     }
 }

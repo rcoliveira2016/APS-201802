@@ -10,8 +10,8 @@ namespace APS.Domain.Models.Agendamentos
 {
     public class Agendamento:Entity
     {
-
-        public Cliente Cliente { get; set; }
+        public long IdCliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
         public DateTime Data { get; set; }
         public DateTime HoraInicial { get; set; }
         public DateTime HoraFinal { get; set; }

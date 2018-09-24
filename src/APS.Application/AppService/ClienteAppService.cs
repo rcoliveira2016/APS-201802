@@ -20,9 +20,10 @@ namespace APS.Application.AppService
             this.mapper = mapper;
         }
 
-        public ICollection<CadastroViewModel> BuscarTodos()
+        public ICollection<CadastroViewModel> BuscarTodos(bool ativos = false)
         {
-            var lista = clienteService.BuscarTodos();
+            var lista = ativos ? clienteService.BuscarTodos(x => x.Ativo) :
+                clienteService.BuscarTodos();
             return mapper.Map<ICollection<CadastroViewModel>>(lista);
         }
 

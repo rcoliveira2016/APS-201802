@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using APS.Presentation.Web.Helpers.Attributes;
+using System.Web;
 using System.Web.Mvc;
 
 namespace APS.Presentation.Web
@@ -8,6 +9,7 @@ namespace APS.Presentation.Web
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new AutenticacaoWebMVC());
         }
     }
 }
