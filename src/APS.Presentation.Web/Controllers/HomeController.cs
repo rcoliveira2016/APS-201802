@@ -1,6 +1,7 @@
 ﻿using APS.Application.Interfaces;
 using APS.Application.ViewModel.Usuario;
 using APS.Domain.Core.Models.Usurios;
+using APS.Presentation.Web.Controllers.Common;
 using APS.Presentation.Web.Helpers.Attributes;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
         private readonly IUsuarioAppService _serviceUsuarios;

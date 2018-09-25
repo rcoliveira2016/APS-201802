@@ -430,8 +430,15 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
-a{
-	color:#5e758a;
+
+/*Validação*/
+
+div.has-error.form-group label.error {
+    color: #a94442;
+}
+/*Final Validação*/
+a {
+    color: #5e758a;
 }
 
 .panel-yellow .panel-heading > a {

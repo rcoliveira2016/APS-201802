@@ -45,13 +45,13 @@ namespace APS.Infra.Data.Context.Repository.EntityFramework.Usuario.Common
         public TEntity Get(Expression<Func<TEntity, bool>> predicate)
         {
             return predicate != null ?
-                dbSet.FirstOrDefault(predicate) :
-                dbSet.FirstOrDefault();
+                dbSet.AsNoTracking().FirstOrDefault(predicate) :
+                dbSet.AsNoTracking().FirstOrDefault();
         }
 
         public TEntity Get(long id)
         {
-            return dbSet.FirstOrDefault(x=> x.Id == id);
+            return dbSet.AsNoTracking().FirstOrDefault(x=> x.Id == id);
         }
 
         public void Remove(TEntity entidade)

@@ -192,12 +192,17 @@
     <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
     <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
     <Content Include="Content\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
-    <Content Include="Content\plugins\bootstrap-social\bootstrap-social.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.css" />
     <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\plugins\bootstrap\js\bootstrap.js" />
     <Content Include="Content\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\plugins\jquery-validation\additional-methods.js" />
+    <Content Include="Content\plugins\jquery-validation\additional-methods.min.js" />
+    <Content Include="Content\plugins\jquery-validation\jquery.validate.js" />
+    <Content Include="Content\plugins\jquery-validation\jquery.validate.min.js" />
+    <Content Include="Content\plugins\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="Content\plugins\jquery-validation\localization\messages_pt_BR.min.js" />
     <Content Include="Content\plugins\font-awesome\css\font-awesome.css" />
     <Content Include="Content\plugins\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -242,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -254,8 +258,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\plugins\bootstrap-social\bootstrap-social.less" />
-    <Content Include="Content\plugins\bootstrap-social\bootstrap-social.scss" />
     <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />

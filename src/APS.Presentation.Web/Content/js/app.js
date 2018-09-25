@@ -51,5 +51,27 @@ $(function() {
         };
     }(jQuery));
 
-
+    jQuery.validator.setDefaults({
+        highlight: function (element, errorClass, validClass) {
+            if (element.type === "radio") {
+                this.findByName(element.name).addClass(errorClass).removeClass(validClass);
+            } else {
+                $(element).closest('.form-group').removeClass('has-success has-feedback').addClass('has-error has-feedback');
+            }
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            if (element.type === "radio") {
+                this.findByName(element.name).removeClass(errorClass).addClass(validClass);
+            } else {
+                $(element).closest('.form-group').removeClass('has-error has-feedback').addClass('has-success has-feedback');
+            }
+        },
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
 });

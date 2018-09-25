@@ -102,7 +102,15 @@ namespace APS.Domain.Core.Validation
         public ValidationRule<TEntity> Greater<R>(Func<TEntity, R> func, R number, string mensagem) where R: struct, IComparable, IComparable<R>
         {
             var r = func.Invoke(entity);
-            if (r.CompareTo(number) > 1)
+            if (r.CompareTo(number) < 0)
+                _errors.Add(mensagem);
+            return this;
+        }
+
+        public ValidationRule<TEntity> GreaterDateTrunc(Func<TEntity, DateTime> func, DateTime date, string mensagem)
+        {
+            var r = func.Invoke(entity).Date;           
+            if (r.CompareTo(date.Date) < 0)
                 _errors.Add(mensagem);
             return this;
         }

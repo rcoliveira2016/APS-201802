@@ -1,11 +1,12 @@
 ﻿using APS.Application.Interfaces;
 using APS.Application.ViewModel.Clientes;
+using APS.Presentation.Web.Controllers.Common;
 using APS.Presentation.Web.Helpers.Attributes;
 using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers
 {
-    public class ClientesController : Controller
+    public class ClientesController : BaseController
     {        
 
         private readonly IClienteAppService clienteAppService;

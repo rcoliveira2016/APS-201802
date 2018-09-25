@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace APS.Domain.Models.Clientes
 {
-    public sealed class Cliente:Entity
+    public class Cliente:Entity
     {
 
         public Cliente(){}
@@ -23,6 +23,6 @@ namespace APS.Domain.Models.Clientes
         public string Descricao { get; set; }
         public string Telefone { get; set; }
         public bool Ativo { get; set; }
-        public ICollection<Agendamento> Agendamentos { get; set; }
+        public virtual ICollection<Agendamento> Agendamentos { get; set; }
     }
 }

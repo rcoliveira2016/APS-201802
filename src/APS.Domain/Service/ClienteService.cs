@@ -36,8 +36,15 @@ namespace APS.Domain.Service
             this.ValidacaoBasica(entidade);
 
             ValidarRegras().IsValid();
-        }        
+        }
 
+        protected override void ValidarRemover(Cliente entidade)
+        {
+            var clienteExixtente = BuscarPorId(entidade.Id);
+            ValidarRegras(entidade)
+                .AddValidacao(() => !clienteExixtente.Agendamentos.Any(), "Existem dados relacionados a esse cliente")
+                .IsValid();
+        }
 
         private void ValidacaoBasica(Cliente entidade) {
             ValidarRegras(entidade)

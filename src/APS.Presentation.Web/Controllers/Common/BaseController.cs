@@ -19,18 +19,19 @@ namespace APS.Presentation.Web.Controllers.Common
             {
                 if (filterContext.HttpContext.Request.Headers[XRequestedWithHeadername] == XMLHttpRequest)
                 {
-                    //Return JSON
+                    filterContext.HttpContext.Response.TrySkipIisCustomErrors = true;
+                    filterContext.HttpContext.Response.StatusCode = (int)System.Net.HttpStatusCode.InternalServerError;
                     filterContext.Result = new JsonResult
                     {
                         JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                        Data = new { error = true, message = filterContext.Exception.Message }
+                        Data = new { error = true, message = filterContext.Exception.Message },                        
                     };
                 }
                 else
                 {
                     var result = new RedirectToRouteResult(new RouteValueDictionary(filterContext.RequestContext.RouteData.Values));
-                    var obj =filterContext.HttpContext.Request.Form;
                     filterContext.Result = result;
+
                 }
                 filterContext.ExceptionHandled = true;
 

@@ -23,7 +23,7 @@ namespace APS.Domain.Service
         protected override void ValidarCadastro(Agendamento entidade)
         {           
             this.ValidacaoBasica(entidade);
-
+            ValidarRegras().GreaterDateTrunc(x => x.Data, DateTime.Now, "Data não pode ser inferior a data atual");
             ValidarRegras().IsValid();
         }
 
@@ -31,7 +31,9 @@ namespace APS.Domain.Service
         {
 
             this.ValidacaoBasica(entidade);
-
+            var agendamento = repositorio.Get(entidade.Id);
+            if (entidade.Data.Date != agendamento.Data)
+                ValidarRegras().GreaterDateTrunc(x => x.Data, DateTime.Now, "Data não pode ser inferior a data atual");
             ValidarRegras().IsValid();
         }        
 
@@ -39,10 +41,11 @@ namespace APS.Domain.Service
         private void ValidacaoBasica(Agendamento entidade) {
             ValidarRegras(entidade)
                 .NotEmpty(x => x.Descricao, "Descrição vazia")
-                .NotEmpty(x => x.Endereco, "Endereço vazio")
-                .Greater(x => x.Data, DateTime.Now, "Data não pode ser inferior a data atual")
+                .NotEmpty(x => x.Endereco, "Endereço vazio")                
+                .Greater(x => x.IdCliente, -1, "Cliente deve ser maior q zero")
                 .Greater(x => x.Preco, -1, "Preço deve ser maior q zero")
                 .Greater(x => x.HoraFinal, entidade.HoraInicial, "Honar inical não pode ser menor que a final");
+
         }
 
         public override void Dispose()

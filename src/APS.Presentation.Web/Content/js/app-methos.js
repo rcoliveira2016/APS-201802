@@ -34,10 +34,10 @@
                         opcao.botao.closest("tr").remove();
                     }
                 },
-                error: function(data){
+                error: function (xhr){
                     BootstrapDialog.alert({
                         title: 'Erro',
-                        message: 'Erro ao excluir:' + data,
+                        message: 'Erro ao excluir: ' + xhr.responseJSON.message,
                         label: BootstrapDialog.TYPE_DANGER
                     });
                 }

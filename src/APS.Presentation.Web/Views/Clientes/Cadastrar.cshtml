@@ -14,7 +14,7 @@
                 Cadastro
             </div>
             <div class="panel-body">
-                @using (Html.BeginForm(Model.Id > 0 ? "Atualizar" : "Cadastrar", "Clientes", FormMethod.Post))
+                @using (Html.BeginForm(Model.Id > 0 ? "Atualizar" : "Cadastrar", "Clientes", FormMethod.Post, new { id = "form" }))
                 {
                     <div class="row">
                         <div class="col-lg-12">
@@ -61,6 +61,24 @@
 
 @section Scripts{
     <script>
+
+        $("#form").validate({
+            rules: {
+                Nome: {
+                    required: true
+                },
+                Endereco: {
+                    required: true
+                },
+                Descricao: {
+                    required: true
+                },
+                Telefone: {
+                    required: true
+                }
+            }
+        });
+
         $(document).ready(function () {
             $(".btn-excluir").on('click', function (e) {
                 e.preventDefault();
