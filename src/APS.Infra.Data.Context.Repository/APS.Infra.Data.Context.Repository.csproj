@@ -63,6 +63,10 @@
       <Project>{f277f7bb-117a-45bc-9b56-2b745b59f2ac}</Project>
       <Name>APS.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\APS.Infra.CrossCutting.Util\APS.Infra.CrossCutting.Util.csproj">
+      <Project>{7624b815-d29f-4473-84af-2fe24b241ec0}</Project>
+      <Name>APS.Infra.CrossCutting.Util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\APS.Infra.Data.Core\APS.Infra.Data.Core.csproj">
       <Project>{151DB2E2-7096-497A-86D9-F2542C485566}</Project>
       <Name>APS.Infra.Data.Core</Name>

@@ -26,6 +26,7 @@ namespace APS.Application.AutoMapper.Mapping
             profile.CreateMap<Agendamento, CadastroViewModel>()
                 .ForMember(x => x.Cliente, m => m.MapFrom(y => y.Cliente.Nome))
                 .ForMember(x => x.Data, m => m.MapFrom(y => y.Data.ToString("dd/MM/yyyy")))
+                .ForMember(x => x.DataNumero, m => m.MapFrom(y => y.Data.ToString("yyyy-MM-ddTHH:mm:ss")))
                 .ForMember(x => x.HoraInicial, m => m.MapFrom(y => y.HoraInicial.ToString("HH:mm")))
                 .ForMember(x => x.HoraFinal, m => m.MapFrom(y => y.HoraFinal.ToString("HH:mm")));
         }

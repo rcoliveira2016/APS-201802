@@ -2,6 +2,7 @@
 using APS.Application.ViewModel.Agendamentos;
 using APS.Presentation.Web.Controllers.Common;
 using APS.Presentation.Web.Helpers.Attributes;
+using System;
 using System.Web.Mvc;
 
 namespace APS.Presentation.Web.Controllers

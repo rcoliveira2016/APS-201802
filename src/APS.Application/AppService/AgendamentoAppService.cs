@@ -7,6 +7,7 @@ using APS.Domain.Models.Usurios;
 using System.Collections.Generic;
 using System.Linq;
 using APS.Domain.Models.Agendamentos;
+using APS.Infra.CrossCutting.Util.Extencions;
 
 namespace APS.Application.AppService
 {
@@ -23,6 +24,14 @@ namespace APS.Application.AppService
         public ICollection<CadastroViewModel> BuscarTodos()
         {
             var lista = agendamentoService.BuscarTodos();
+            return mapper.Map<ICollection<CadastroViewModel>>(lista);
+        }
+
+        public ICollection<CadastroViewModel> BuscarPorDataMes(DateTime data)
+        {
+            var dataAnteriorPrimeiroDia = data.FirstDayMonth().AddDays(-6);
+            var dataDepoisUltimoDia = data.LastDayMonth().AddDays(6);
+            var lista = agendamentoService.BuscarTodos(x=> x.Data> dataAnteriorPrimeiroDia && x.Data < dataDepoisUltimoDia) ?? Enumerable.Empty<Agendamento>();
             return mapper.Map<ICollection<CadastroViewModel>>(lista);
         }
 
@@ -55,5 +64,6 @@ namespace APS.Application.AppService
             agendamentoService.Dispose();
             GC.SuppressFinalize(this);
         }
+        
     }
 }

@@ -166,6 +166,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AgendamentosController.cs" />
+    <Compile Include="Controllers\CalendarioController.cs" />
     <Compile Include="Controllers\Common\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
@@ -311,6 +312,7 @@
     <Content Include="Views\Clientes\Cadastrar.cshtml" />
     <Content Include="Views\Agendamentos\Cadastrar.cshtml" />
     <Content Include="Views\Agendamentos\Index.cshtml" />
+    <Content Include="Views\Calendario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APS.Application\APS.Application.csproj">

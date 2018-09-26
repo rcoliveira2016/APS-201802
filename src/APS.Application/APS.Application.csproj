@@ -86,6 +86,10 @@
       <Project>{8F620674-0E0E-45D0-84E2-BF5D231C6A79}</Project>
       <Name>APS.Infra.CrossCutting.Bus</Name>
     </ProjectReference>
+    <ProjectReference Include="..\APS.Infra.CrossCutting.Util\APS.Infra.CrossCutting.Util.csproj">
+      <Project>{7624b815-d29f-4473-84af-2fe24b241ec0}</Project>
+      <Name>APS.Infra.CrossCutting.Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

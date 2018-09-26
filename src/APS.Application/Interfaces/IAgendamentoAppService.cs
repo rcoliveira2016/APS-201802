@@ -13,6 +13,7 @@ namespace APS.Application.Interfaces
         void Cadastrar(CadastroViewModel cadastroViewModel);
         void Remover(long id);
         ICollection<CadastroViewModel> BuscarTodos();
+        ICollection<CadastroViewModel> BuscarPorDataMes(DateTime data);
         void Atualizar(CadastroViewModel cadastroViewModel);
         CadastroViewModel BuscarPorId(long id);
     }

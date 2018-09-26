@@ -12,6 +12,7 @@ namespace APS.Application.ViewModel.Agendamentos
         public long IdCliente { get; set; }
         public string Cliente { get; set; }
         public string Data { get; set; }
+        public string DataNumero { get; set; }
         public string HoraInicial { get; set; }
         public string HoraFinal { get; set; }
         public string Endereco { get; set; }
