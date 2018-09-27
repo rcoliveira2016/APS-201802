@@ -41,6 +41,10 @@
                     border-radius: 3px;
                 }
 
+                    table.calendario-io td div.container-td .tooltip.fade.top.in div.tooltip-inner {
+                        text-align:left;
+                    }
+
                 table.calendario-io td div.container-td::-webkit-scrollbar {
                     width: 2px;
                 }
@@ -76,6 +80,7 @@
         .cabecalho-calendario div a {
             font-size: 18px;
         }
+    
 </style>
 <section class="row">
     <div class="col-lg-12">
@@ -279,8 +284,26 @@
                 div.classList.add("agendamentos");
                 div.appendChild(_criarIcone('fa-plus'))
                 div.appendChild(document.createTextNode(e.Cliente));
+                div.setAttribute("data-id", e.Id);
+                div.setAttribute("title", _obterDescricaoAgendamento(e));
+
+                div.addEventListener('click', function (event) {
+                    var id = event.target.getAttribute("data-id");
+                    window.open(parametro.urls.atualizarAgendamento + "/" + id, "_blank");
+                });
+
                 td.appendChild(div);
             });
+        }
+
+        var _obterDescricaoAgendamento = function (agendamento) {
+            var descricao = new Array();
+
+            descricao.push("<b>Cliente:</b> " + agendamento.Cliente);
+            descricao.push("<b>Descrição:</b> " + agendamento.Descricao);
+            descricao.push("<b>Endereço:</b> " + agendamento.Endereco);
+
+            return descricao.join("<br>")
         }
 
         var _obterTituloDataSpan = function (data) {
@@ -337,10 +360,13 @@
             id: "calendario",
             data: new Date(),
             urls: {
-                buscarPorDataMes:"@Url.Action("BuscarPorDataMes", "Calendario")"
+                buscarPorDataMes: "@Url.Action("BuscarPorDataMes", "Calendario")",
+                atualizarAgendamento: "@Url.Action("Atualizar", "Agendamentos")"
             },
             lisatAgendamento: @Html.Raw(Json.Encode(Model)) || new Array()
         });
+
+        $('table.calendario-io td div.container-td div.agendamentos').tooltip({ html: true });
     });
     </script>
 }
