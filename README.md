@@ -13,7 +13,7 @@ Segue o link para o pdf dos protótipos de tela. [clique aqui](https://github.co
 ### Tecnologias usadas
 - APS .net framework 4.6.1
 - SQl Server 2014
-- Html, CSS e Javascript
+- Html, CSS e Javascript(com plugins)
 - MVC 5 (APS .net)
 
 
