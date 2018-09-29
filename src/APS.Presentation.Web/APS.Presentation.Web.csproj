@@ -181,8 +181,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\estilo.css" />
+    <Content Include="Content\css\pages\calendario.css" />
     <Content Include="Content\js\app-methos.js" />
     <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\Calendario.js" />
     <Content Include="Content\midia\logo.png" />
     <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.css" />
     <Content Include="Content\plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
