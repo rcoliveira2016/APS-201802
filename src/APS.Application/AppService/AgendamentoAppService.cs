@@ -8,16 +8,19 @@ using System.Collections.Generic;
 using System.Linq;
 using APS.Domain.Models.Agendamentos;
 using APS.Infra.CrossCutting.Util.Extencions;
+using APS.Domain.Interfaces.Repository.Usuario;
 
 namespace APS.Application.AppService
 {
     public sealed class AgendamentoAppService : IAgendamentoAppService
     {
         private readonly IAgendamentoService agendamentoService;
+        private readonly IAgendamentoRepository agendamentoRepository;
         private readonly IMapper mapper;
-        public AgendamentoAppService(IAgendamentoService AgendamentoService, IMapper mapper)
+        public AgendamentoAppService(IAgendamentoService AgendamentoService, IAgendamentoRepository agendamentoRepository, IMapper mapper)
         {
             this.agendamentoService = AgendamentoService;
+            this.agendamentoRepository = agendamentoRepository;
             this.mapper = mapper;
         }
 
@@ -32,6 +35,12 @@ namespace APS.Application.AppService
             var dataAnteriorPrimeiroDia = data.FirstDayMonth().AddDays(-6);
             var dataDepoisUltimoDia = data.LastDayMonth().AddDays(6);
             var lista = agendamentoService.BuscarTodos(x=> x.Data> dataAnteriorPrimeiroDia && x.Data < dataDepoisUltimoDia) ?? Enumerable.Empty<Agendamento>();
+            return mapper.Map<ICollection<CadastroViewModel>>(lista);
+        }
+
+        public ICollection<CadastroViewModel> BuscarPorData(DateTime data)
+        {
+            var lista = agendamentoRepository.BuscarPorData(data);
             return mapper.Map<ICollection<CadastroViewModel>>(lista);
         }
 

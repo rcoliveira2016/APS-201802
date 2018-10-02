@@ -8,6 +8,7 @@ using APS.Domain.Core.Exceptions;
 using APS.Domain.Models.Clientes;
 using APS.Domain.Models.Agendamentos;
 using System;
+using System.Collections.Generic;
 
 namespace APS.Domain.Service
 {
@@ -19,6 +20,7 @@ namespace APS.Domain.Service
         {
             
         }
+        
 
         protected override void ValidarCadastro(Agendamento entidade)
         {           

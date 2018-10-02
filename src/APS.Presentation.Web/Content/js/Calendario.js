@@ -176,7 +176,7 @@
         }).forEach(function (e) {
             var div = _criarElemento("div");
             div.classList.add("agendamentos");
-            div.appendChild(_criarIcone('fa-plus'))
+            div.appendChild(_criarIcone('fa-plus'));
             div.appendChild(document.createTextNode(e.Cliente));
             div.setAttribute("data-id", e.Id);
             div.setAttribute("title", _obterDescricaoAgendamento(e));

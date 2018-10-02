@@ -22,12 +22,12 @@ $(function() {
         }
     });
 
-    var url = window.location;
+    var url = window.location.href;
     // var element = $('ul.nav a').filter(function() {
     //     return this.href == url;
     // }).addClass('active').parent().parent().addClass('in').parent();
     var element = $('ul.nav a').filter(function() {
-        return this.href === url;
+        return this.href.replace("#") === url;
     }).addClass('active').parent();
 
     while (true) {

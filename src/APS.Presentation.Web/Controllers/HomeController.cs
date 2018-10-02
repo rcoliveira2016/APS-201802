@@ -16,17 +16,18 @@ namespace APS.Presentation.Web.Controllers
     {
 
         private readonly IUsuarioAppService _serviceUsuarios;
+        private readonly IAgendamentoAppService _agendamentoAppService;
 
-        public HomeController(IUsuarioAppService serviceUsuarios)
+        public HomeController(IUsuarioAppService serviceUsuarios, IAgendamentoAppService agendamentoAppService)
         {
             _serviceUsuarios = serviceUsuarios;
+            _agendamentoAppService = agendamentoAppService;
         }
 
         
         public ActionResult Index()
-        {
-            //AplicacaoWeb.LogarUsuario(new CadastroViewModel { Email = "tes@com.com", Id = 0, Login = "llo", Nome = "Luis Cesar", Senha = "123", TipoUsuario = eTipoUsuario.Administrador });
-            return View();
+        {            
+            return View(_agendamentoAppService.BuscarPorData(DateTime.Now));
         }
 
         [AllowAnonymous]

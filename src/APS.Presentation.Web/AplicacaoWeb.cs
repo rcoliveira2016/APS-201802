@@ -32,7 +32,7 @@ namespace APS.Presentation.Web
 
             if (cookie != null && cookie.HasKeys)
             {
-                usuario = BuscarUsuarioLogin(cookie.Values[chaveValorLoginUsuario]);
+                usuario = BuscarUsuarioLogin(cookie.Value);
                 if (usuario != null)
                 {
                     HttpContext.Current.Session[chaveUsuarioLogadoSessao] = usuario;
@@ -56,8 +56,16 @@ namespace APS.Presentation.Web
 
         public static void LogarUsuario(UsuarioViewModel usuarioViewModel)
         {
-            HttpContext.Current.Session.Add(chaveUsuarioLogadoSessao, usuarioViewModel);
-            SetarCookie(usuarioViewModel);
+            var cookie = new HttpCookie(chaveUsuarioLogadoSessao)
+            {
+                Expires = DateTime.Now.AddDays(3)
+            };
+
+            cookie.Value = usuarioViewModel.Login;
+
+            HttpContext.Current.Response.Cookies.Add(cookie);
+
+            HttpContext.Current.Session.Add(chaveUsuarioLogadoSessao, usuarioViewModel);            
         }
 
         public static void LogOffUsuario()
@@ -65,19 +73,7 @@ namespace APS.Presentation.Web
             HttpContext.Current.Session.Remove(chaveUsuarioLogadoSessao);
             HttpContext.Current.Response.Cookies.Remove(chaveUsuarioLogadoSessao);
         }        
-
-        public static void SetarCookie(UsuarioViewModel usuarioViewModel)
-        {
-            var cookie = new HttpCookie(chaveUsuarioLogadoSessao)
-            {
-                Expires = DateTime.Now.AddDays(3)
-            };
-
-            cookie.Values[chaveValorLoginUsuario] = usuarioViewModel.Login;
-
-            HttpContext.Current.Response.Cookies.Add(cookie);
-
-        }
+        
 
         private static UsuarioViewModel BuscarUsuarioLogin(string login)
         {

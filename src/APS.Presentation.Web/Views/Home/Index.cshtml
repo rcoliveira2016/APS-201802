@@ -1,6 +1,162 @@
-﻿<section class="row">
+﻿@model IEnumerable<APS.Application.ViewModel.Agendamentos.CadastroViewModel>
+
+<section class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Início</h1>
     </div>
 </section>
-<section class="row"></section>
+<section class="row">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Agendados Para Hoje
+        </div>
+        <div class="panel-body" id="agendados-para-hoje">
+
+        </div>
+    </div>
+
+</section>
+@section Scripts{
+    <script type="text/javascript">
+        var AgendadosParaHoje = function (parametros) {
+            var $container;
+
+            var _setarBody = function (entidade) {
+                var div = document.createElement("div"),
+                    pDescricao = document.createElement("p"),
+                    bDescricao = document.createElement("b"),
+                    pEnedereco = document.createElement("p"),
+                    bEnedereco = document.createElement("b");
+
+                bDescricao.innerText = "Descrição: ";
+                pDescricao.appendChild(bDescricao);
+                pDescricao.appendChild(document.createTextNode(entidade.Descricao));
+                div.appendChild(pDescricao);
+
+                pEnedereco.innerHTML = null;
+                bEnedereco.innerText = "Endereço: ";
+                pEnedereco.appendChild(bEnedereco);
+                pEnedereco.appendChild(document.createTextNode(entidade.Endereco));
+                div.appendChild(pEnedereco);
+
+                return div;
+            };
+
+            var _setarTituloPanel = function (entidade) {
+                var div = document.createElement("div"),
+                    i = document.createElement("i"),
+                    b = document.createElement("b");
+
+                i.className = "fa fa-calendar fa-fw";
+                b.innerText = " Cliente: ";
+
+                div.appendChild(i);
+                div.appendChild(b);
+                div.appendChild(document.createTextNode(entidade.Cliente));
+
+                return div;
+            };
+
+            var _carregar = function () {
+                $container = document.getElementById(parametros.id);
+
+                if (!parametros.viewModel || parametros.viewModel.length < 1)
+                {
+                    var div = document.createElement("div");
+                    div.className = "alert alert-danger";
+
+                    div.appendChild(document.createTextNode("Você não possui nenhum agendamento para hoje"));
+
+                    $container.appendChild(div);
+                }
+
+                parametros.viewModel.forEach(function (e) {
+                    var panel = new PanelCollapse();
+                    panel.setarBody(_setarBody(e));
+                    panel.setarTituloPanel(_setarTituloPanel(e));
+
+                    $container.appendChild(panel.obterPanel());
+                });
+            };
+
+            _carregar();
+        };
+
+        var PanelCollapse = function () {
+
+            var $container = document.createElement("section"),
+                ID_PANEL_COLLAPSE = "panel-collapse-" + Math.ceil(Math.random() * 10000);
+
+            var _setarTituloPanel = function (element) {
+                $container.querySelector("h4.panel-title a").appendChild(element);
+            };
+
+            var _setarBody = function (element) {
+                $container.querySelector(".panel-collapse.collapse .panel-body").appendChild(element);
+            };
+
+            var _obterPanel = function () {
+                return $container;
+            };
+
+            var _obterPanelHeading = function () {
+                var div = document.createElement("div"),
+                    h4 = document.createElement("h4"),
+                    a = document.createElement("a");
+
+                a.classList.add("collapsed");
+                a.setAttribute("data-toggle", "collapse");
+                a.setAttribute("data-parent", "accordion");
+                a.setAttribute("aria-expanded", "false");
+                a.setAttribute("href", "#" + ID_PANEL_COLLAPSE);
+
+                h4.appendChild(a);
+                h4.classList.add("panel-title");
+
+                div.appendChild(h4);
+                div.classList.add("panel-heading");
+
+                return div;
+            };
+
+            var _obterPanelCollapse = function () {
+                var divPanelCollapse = document.createElement("div");
+                var divPanelBody = document.createElement("div");
+
+                divPanelBody.classList.add("panel-body");
+
+                divPanelCollapse.appendChild(divPanelBody);
+                divPanelCollapse.classList.add("panel-collapse");
+                divPanelCollapse.classList.add("collapse");
+                divPanelCollapse.setAttribute("aria-expanded", "false");
+                divPanelCollapse.setAttribute("id", ID_PANEL_COLLAPSE);
+                divPanelCollapse.style.height = "0px";
+
+                return divPanelCollapse;
+            };
+
+            var _carregar = function () {
+                $container.classList.add("panel");
+                $container.classList.add("panel-green");
+                $container.appendChild(_obterPanelHeading());
+                $container.appendChild(_obterPanelCollapse());
+            };
+
+            _carregar();
+
+            return {
+                setarTituloPanel: _setarTituloPanel,
+                setarBody: _setarBody,
+                obterPanel: _obterPanel
+            };
+        };
+
+        $(document).ready(function () {
+            new AgendadosParaHoje({
+                id: "agendados-para-hoje",
+                viewModel:@Html.Raw(Json.Encode(Model)) || new Array()
+            });
+        });
+    </script>
+}
