@@ -8,8 +8,9 @@ Um sistema para gerenciar agendamento de ferrageamento de cavalos. Nele será po
 
 ### Descrição
 
-O sistema foi elaborado para gerenciar a agenda de ferradores de cavalo. Existe um controle de usuários (usuários são cadastrados direto no banco por questão de segurança) para gestão de acesso ao sistema, por meio de uma tela de login (Telas-Login). Para maior controle e coerencia de dados existe o cadastro de clientes, os clientes são usados para representar: pessoas, cabanhas etc. Onde teram a finalidade de serem utilisados na tela de agendamento.  
-A tela Agendamento é responsável por gerenciar a data e horario, que o cliente será atendido. Também possui uma breve descrição do que será feito no atendimento, endereço e o preço do ferrageamento e casqueamento.
+  O sistema foi elaborado para gerenciar a agenda de ferradores de cavalos. Existe um controle de usuários - usuários são cadastrados direto no banco por questão de segurança - para gestão de acesso. O ingresso as sistema se dá por meio de uma tela de login.   
+  Para o maior controle e consistência dos dados, existe o cadastro de clientes, os mesmos são usados para representar: pessoas, cabanhas etc. Onde terá a finalidade de ser utilizados na tela de agendamento. Essa é responsável por gerenciar a data e horario, que o cliente será atendido. Também possui uma breve descrição do que será feito no atendimento, endereço e o preço do  casqueamento e ferrageamento.  
+  O Calendário é a tela onde pode fazer a consulta dos agendamentos, por meio de um calendário de 30 dias. Ao clicar no nome do cliente, será direcioando para página do agendamento do respectivo cliente.
 
 ### Protótipo
 
