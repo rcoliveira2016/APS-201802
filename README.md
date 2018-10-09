@@ -17,31 +17,33 @@ Um sistema para gerenciar agendamento de ferrageamento de cavalos. Nele será po
 Segue o link para o pdf dos protótipos de tela. [clique aqui](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/Prototipo.pdf)
 
 ### Tecnologias usadas
-- APS .net framework 4.6.1
+- ASP .net framework 4.6.1
 - SQl Server 2014
 - Html, CSS e Javascript(com plugins)
-- MVC 5 (APS .net)
+- MVC 5 (ASP .net)
 
 
 ### Telas
 
-* #### Home
+* #### Home     
+##### Tela inicial do sistema
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/home.png)
-
-* #### Login
+______________________________________________________________________________________________
+* #### Login   
+Tela para acessar o sistema com as credenciais do usuário
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/Login.png)
-
+______________________________________________________________________________________________
 * #### Listagem de Clentes 
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/Clientes.png)
-
+______________________________________________________________________________________________
 * #### Cadastro de Clentes 
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/Clientes-Cadastrar.png)
-
+______________________________________________________________________________________________
 * #### Listagem de Agendamentos 
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/Agendamentos.png)
-
+______________________________________________________________________________________________
 * #### Cadastro de Agendamentos 
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/Agendamentos-Cadastrar.png)
-
+______________________________________________________________________________________________
 * #### Calendário
 ![Home](https://github.com/rcoliveira2016/APS-201802/blob/master/docs/imgens/Calendario.png)
