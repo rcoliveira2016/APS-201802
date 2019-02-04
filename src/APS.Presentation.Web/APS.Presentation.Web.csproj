@@ -315,6 +315,7 @@
     <Content Include="Views\Agendamentos\Cadastrar.cshtml" />
     <Content Include="Views\Agendamentos\Index.cshtml" />
     <Content Include="Views\Calendario\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\APS.Application\APS.Application.csproj">
